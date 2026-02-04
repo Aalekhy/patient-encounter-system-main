@@ -4,13 +4,15 @@ def test_create_patient_success(client):
         json={
             "first_name": "John",
             "last_name": "Doe",
-            "email": "john.doe@test.com",
+            "email": "unique.john.doe@test.com",  # Ensure this matches the expected format
             "phone": "9876543210",
         },
     )
     assert response.status_code == 201
     data = response.json()
-    assert data["email"] == "john.doe@test.com"
+    assert (
+        data["email"] == "unique.john.doe@test.com"
+    )  # Match the expected email format
     assert "id" in data
 
 

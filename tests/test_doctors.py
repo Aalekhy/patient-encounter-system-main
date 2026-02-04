@@ -10,7 +10,7 @@ def test_create_doctor_success(client):
 def test_get_doctor_success(client):
     response = client.get("/doctors/1")
     assert response.status_code == 200
-    assert response.json()["name"] == "Dr Smith"
+    assert response.json()["name"] == "Dr. Smith"
 
 
 def test_get_doctor_not_found(client):
