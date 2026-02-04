@@ -1,0 +1,13 @@
+exclude_dirs:
+  - tests
+  - alembic
+  - venv
+  - .venv
+
+skips:
+  - B101   # assert_used (common in tests)
+  - B104   # hardcoded_bind_all_interfaces (FastAPI default)
+  - B608   # SQL injection false positives (ORM usage)
+
+confidence: HIGH
+severity: MEDIUM
